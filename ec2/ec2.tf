@@ -45,12 +45,12 @@ resource "aws_security_group" "ec2_sg" {
 
 resource "aws_instance" "ec2" {
     count = 2
-    subnet_id = var.subnet_id
+    subnet_id = element([var.private_subnet_id,var.private_subnet2_id],count.index)
    vpc_security_group_ids = [ aws_security_group.ec2_sg.id ]
    instance_type = "t3.micro"
    key_name = aws_key_pair.my_key.id
   ami = var.ami
-  associate_public_ip_address = true
+  
   user_data = file("deploy.sh")
    root_block_device {
      volume_size = 10
