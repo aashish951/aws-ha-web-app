@@ -44,6 +44,7 @@ resource "aws_security_group" "ec2_sg" {
 }
 
 resource "aws_instance" "ec2" {
+    count = 2
     subnet_id = var.subnet_id
    vpc_security_group_ids = [ aws_security_group.ec2_sg.id ]
    instance_type = "t3.micro"

@@ -16,7 +16,7 @@ module "ec2" {
 module "alb" {
   source = "./alb"
   vpc_id = module.vpc.vpc_id
-  instance_id = module.ec2.instance_id
+  instance_ids = module.ec2.instance_ids
   env = "dev"
   subnet_ids = [module.vpc.public_subnet_id, module.vpc.public_subnet2_id]
   
