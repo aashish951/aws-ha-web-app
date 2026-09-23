@@ -8,7 +8,6 @@ variable "vpc_id" {
   
 }
 
-
 variable "ami" {
     type = string
   
