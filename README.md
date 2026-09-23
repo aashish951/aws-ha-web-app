@@ -4,7 +4,7 @@ A highly available AWS web application infrastructure, built end-to-end with Ter
 
 ## Architecture
 
-![Architecture Diagram](./screenshot/aws-ha-web-app-architecture.png)
+![Architecture Diagram](./screenshot/aws-ha-web-app-architecture.webp)
 
 **Flow:** Internet → Internet Gateway → Application Load Balancer (public subnets) → EC2 instances (private subnets, port 5000). Outbound traffic from EC2 (package installs, git clone) goes through the NAT Gateway → Internet Gateway.
 
